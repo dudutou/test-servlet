@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<web-app
+        xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+        version="2.4">
+  <filter>
+    <filter-name>TestFilter</filter-name>
+    <filter-class>com.dudutou.TestFilter</filter-class>
+    <init-param>
+      <param-name>Site</param-name>
+      <param-value>菜鸟教程</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>TestFilter</filter-name>
+    <url-pattern>/HelloWorld</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>HelloWorld</servlet-name>
+    <servlet-class>com.dudutou.HelloWorld</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>HelloWorld</servlet-name>
+    <url-pattern>/HelloWorld</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>HelloForm</servlet-name>
+    <servlet-class>com.dudutou.HelloForm</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>HelloForm</servlet-name>
+    <url-pattern>/HelloForm</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Refresh</servlet-name>
+    <servlet-class>com.dudutou.Refresh</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Refresh</servlet-name>
+    <url-pattern>/Refresh</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ShowError</servlet-name>
+    <servlet-class>com.dudutou.ShowError</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ShowError</servlet-name>
+    <url-pattern>/ShowError</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ErrorHandler</servlet-name>
+    <servlet-class>com.dudutou.ErrorHandler</servlet-class>
+  </servlet>
+  <!-- servlet mappings -->
+  <servlet-mapping>
+    <servlet-name>ErrorHandler</servlet-name>
+    <url-pattern>/ErrorHandler</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TestCookie</servlet-name>
+    <servlet-class>com.dudutou.TestCookie</servlet-class>
+  </servlet>
+  <!-- servlet mappings -->
+  <servlet-mapping>
+    <servlet-name>TestCookie</servlet-name>
+    <url-pattern>/TestCookie</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <!-- 类名 -->
+    <servlet-name>SessionTrack</servlet-name>
+    <!-- 所在的包 -->
+    <servlet-class>com.dudutou.SessionTrack</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTrack</servlet-name>
+    <!-- 访问的网址 -->
+    <url-pattern>/SessionTrack</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TestDB</servlet-name>
+    <servlet-class>com.dudutou.TestDB</servlet-class>
+  </servlet>
+  <!-- servlet mappings -->
+  <servlet-mapping>
+    <servlet-name>TestDB</servlet-name>
+    <url-pattern>/TestDB</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <display-name>UploadServlet</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.dudutou.UploadServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TestLocale</servlet-name>
+    <servlet-class>com.dudutou.TestLocale</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>TestLocale</servlet-name>
+    <url-pattern>/TestLocale</url-pattern>
+  </servlet-mapping>
+  
+  <!-- test error handling -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/ErrorHandler</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type >
+    <location>/ErrorHandler</location>
+  </error-page>
+</web-app>
